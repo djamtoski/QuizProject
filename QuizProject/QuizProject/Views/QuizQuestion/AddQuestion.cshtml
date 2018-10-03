@@ -1,0 +1,23 @@
+﻿@model QuizProject.Models.QuizQuestionViewModel
+
+
+<div class="row">
+    <div class="col-lg-6">
+
+        @using (Html.BeginForm())
+        {
+            <div class="form-group">
+                @Html.LabelFor(t => t.QuestionText)
+                @Html.TextBoxFor(t => t.QuestionText, new { @class = "form-control" })
+                @Html.ValidationMessageFor(t => t.QuestionText)
+            </div>
+
+
+            <input type="submit" onclick="" class="btn btn-success" value="+ Next" />
+
+
+        }
+    </div>
+</div>
+
+

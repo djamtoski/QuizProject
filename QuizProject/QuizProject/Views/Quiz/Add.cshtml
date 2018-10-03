@@ -1,0 +1,37 @@
+﻿@model QuizProject.Models.AddEditQuizViewModel
+
+
+<div class="row">
+    <div class="col-lg-6">
+
+        @using (Html.BeginForm())
+        {
+            <div class="form-group">
+                @Html.LabelFor(t => t.QuizTitle)
+                @Html.TextBoxFor(t => t.QuizTitle, new { @class = "form-control" })
+                @Html.ValidationMessageFor(t => t.QuizTitle)
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(t => t.Difficulty)
+                @Html.TextBoxFor(t => t.Difficulty, new { @class = "form-control" })
+                @Html.ValidationMessageFor(t => t.Difficulty)
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(t => t.Image_url)
+                @Html.TextBoxFor(t => t.Image_url, new { @class = "form-control" })
+                @Html.ValidationMessageFor(t => t.Image_url)
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(t => t.SelectedCategoryId)
+                @Html.DropDownListFor(t => t.SelectedCategoryId, new SelectList(Model.CategoryOption, "CategoryId", "CategoryName", Model.SelectedCategoryId))
+                @Html.ValidationMessageFor(t => t.SelectedCategoryId)
+            </div>
+
+            @Html.ActionLink("Cancel", "Index", "Quiz", null, new { @class = "btn btn-danger" })
+            @Html.ActionLink("Next", "Add", "QuizQuestion", new { Model.QuizId }, new { @class = "btn btn-success", type = "submit" })
+            @*<input type="submit" class="btn btn-success" value="+ Next" />*@
+
+
+        }
+    </div>
+</div>

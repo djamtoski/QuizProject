@@ -1,0 +1,21 @@
+﻿@model QuizProject.Models.CategoryViewModel
+
+
+
+@using (Html.BeginForm())
+{
+    <div>
+        <div>
+            @Html.LabelFor(t => t.CategoryName)
+            @Html.TextBoxFor(t => t.CategoryName, new { @class = "form-control" })
+            @Html.ValidationMessageFor(t => t.CategoryName)
+
+            @Html.LabelFor(t => t.Image_url)
+            @Html.TextBoxFor(t => t.Image_url, new { @class = "form-control" })
+            @Html.ValidationMessageFor(t => t.Image_url)
+
+            <input type="submit" class="btn btn-warning" value="Edit Category" />
+
+        </div>
+    </div>
+}

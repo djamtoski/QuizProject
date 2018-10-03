@@ -1,0 +1,52 @@
+﻿@model List<QuizProject.Models.ChatViewModel>
+
+<div class="container" id="chat-container">
+    @foreach (var item in Model)
+    {<div class="row">
+            <h3>@item.Message</h3>
+            <span>@item.Time</span>
+        </div>
+    }
+</div>
+
+<form onsubmit="event.preventDefault(); newMessage();">
+    Message: <input type="text" name="message" id="message"><br>
+    <input type="reset" value="Submit">
+</form>
+
+@section scripts {
+
+    <script>
+        function newMessage() {     
+
+            $.ajax({
+                type: "POST",
+                url: "/Chat/Insert",
+                data: { Message: $("#message").val() }         
+            });
+
+        }
+
+
+        function successMessage(data) {
+            console.log(data);
+            data.forEach(function (item) {
+                $("#chat-container").append(`<div class="row">
+            <h3>${item.Message}</h3>
+            <span>${item.Time}</span>
+        </div>`)
+            });
+          
+        }
+
+        setInterval(function () {
+            $.ajax({
+                type: "GET",
+                url: "/Chat/Get",
+                success: successMessage,
+            });
+            console.log("ajax done");
+        }, 10000);
+    </script>
+}
+

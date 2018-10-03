@@ -1,0 +1,24 @@
+﻿@model List<QuizProject.Models.CategoryViewModel>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3">
+            @Html.ActionLink("+ Add Category", "AddCategory", "Category", null, new { @class = "btn btn-block btn-success pull-left" })
+        </div>
+    </div>
+    @foreach (var item in Model)
+
+    {
+
+        <div class="col-lg-6 pull-left">
+            <h3 class="text-center text-info">@item.CategoryName</h3>
+            <a href="/Quiz/Index/@item.CategoryId"><img src="@item.Image_url" class="img img-thumbnail" width="200" height="200" /></a>
+            @Html.ActionLink("Edit", "Edit", "Category", new { id = item.CategoryId }, new { @class = "btn btn-info" })
+            @Html.ActionLink("Delete", "Category", "Quiz", new { id = item.CategoryId }, new { @class = "btn btn-danger" })
+
+        </div>
+
+
+    }
+
+</div>

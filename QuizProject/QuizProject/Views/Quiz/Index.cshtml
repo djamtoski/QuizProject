@@ -1,0 +1,66 @@
+﻿@model  List<QuizProject.Models.QuizViewModel>
+
+
+<div class="row my-10">
+    <div class="col-lg-12">
+        @Html.ActionLink("+ Add New", "Add", "Quiz", new {Model[0].Helper}, new { @class = "btn btn-info" })
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-12">
+        <table class="table quiz-table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">QuizTitle</th>
+                    <th scope="col">Difficulty</th>
+                    <th scope="col">Category</th>
+                    <th scope="col" class="text-center">Action</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td><h3>@Html.ActionLink("Play", "Play", "Quiz", new { id = @item.QuizId }, new { @class = "btn btn-success glyphicon glyphicon-play" })</h3></td>
+                        <td>
+                            <img src="@item.Image_url" class="img img-thumbnail" />
+                            <h3>@item.QuizTitle</h3>
+                        </td>
+                        <td>
+                            <h3><span class="label label-primary">@item.Difficulty</span></h3>
+                        </td>
+                        <td>@item.CategoryName</td>
+                        <td>@Html.ActionLink("Delete", "Delete", "Quiz", new { id = @item.QuizId, @item.Helper } , new { @class = "btn btn-danger" })</td>
+                        <td>@Html.ActionLink("Edit", "Edit", "Quiz", new { id = @item.QuizId, @item.Helper }, new { @class = "btn btn-primary" })</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+
+@section styles{
+    <style>
+        .img-thumbnail {
+            max-height: 50px;
+            max-width: 50px;
+        }
+
+
+        .quiz-table h3 {
+            display: inline-block;
+            vertical-align: middle;
+            margin: 0 0 0 5px;
+        }
+
+        .my-10 {
+            margin: 10px 0 10px 0;
+        }
+    </style>
+}

@@ -1,0 +1,9 @@
+﻿@model List<QuizProject.Models.QuizQuestionViewModel>
+
+@foreach (var item in Model)
+{
+    <div>@item.QuestionId</div>
+    <div>@item.ForQuizId</div>
+    <div>@item.QuestionText</div>
+
+}
