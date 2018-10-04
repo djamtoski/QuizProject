@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27428.2037
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuizProject", "QuizProject\QuizProject.csproj", "{6A8D772B-7D95-4437-A628-2278671415D8}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataLayer", "DataLayer\DataLayer.csproj", "{8EB88110-0ADB-43EE-8FF6-FCC135011566}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLayer", "BusinessLayer\BusinessLayer.csproj", "{77F58733-5C2E-4F85-9CF4-F88C7B1E9896}"
@@ -17,10 +15,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{6A8D772B-7D95-4437-A628-2278671415D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6A8D772B-7D95-4437-A628-2278671415D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6A8D772B-7D95-4437-A628-2278671415D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6A8D772B-7D95-4437-A628-2278671415D8}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8EB88110-0ADB-43EE-8FF6-FCC135011566}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8EB88110-0ADB-43EE-8FF6-FCC135011566}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8EB88110-0ADB-43EE-8FF6-FCC135011566}.Release|Any CPU.ActiveCfg = Release|Any CPU
