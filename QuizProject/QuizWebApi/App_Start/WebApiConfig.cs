@@ -20,6 +20,8 @@ namespace QuizWebApi
             // Use camel case for JSON data.
             config.Formatters.JsonFormatter.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
 
+            config.EnableCors();
+
             // Web API routes
             config.MapHttpAttributeRoutes();
 

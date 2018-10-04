@@ -8,11 +8,13 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Cors;
 using System.Web.Http.Results;
 using System.Web.Mvc;
 
 namespace QuizWebApi.Controllers
 {
+    [EnableCors(origins: "http://localhost:8080", headers: "*", methods: "*")]
     public class QuizController : ApiController
     {
         private IQuizRepository _quizRepository;
