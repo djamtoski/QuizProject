@@ -1,5 +1,6 @@
 ﻿using BusinessLayer.Interfaces;
 using BusinessLayer.Repositories;
+using DataLayer.Entities;
 using QuizWebApi.Models;
 using System;
 using System.Collections.Generic;
@@ -47,6 +48,14 @@ namespace QuizWebApi.Controllers
                 return model;
         }
 
+        public void Add(QuizViewModel model)
+        {
+            if(model == null)
+            {
+                throw new HttpResponseException(HttpStatusCode.NoContent);
+            }
+        }
+
         public void Delete(int id)
         {
             var quiz = _quizRepository.GetByID(id);
@@ -57,5 +66,6 @@ namespace QuizWebApi.Controllers
 
             _quizRepository.Delete(id);
         }
+
     }
 }
