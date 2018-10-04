@@ -46,5 +46,16 @@ namespace QuizWebApi.Controllers
             model.CategoryName = mod.Category.CategoryName;
                 return model;
         }
+
+        public void Delete(int id)
+        {
+            var quiz = _quizRepository.GetByID(id);
+            if (quiz == null)
+            {
+                throw new HttpResponseException(HttpStatusCode.NotFound);
+            }
+
+            _quizRepository.Delete(id);
+        }
     }
 }
